@@ -7,10 +7,10 @@ const Navbar = () => {
             <div className="text-2xl">ACM</div>
             <div className="flex space-x-4">
                 <Link to='/'>HOME</Link>
-                <Link to='/gal1'>GAL1</Link>
+                <Link to='/gal4'>GAL1</Link>
                 <Link to='/gal2'>GAL2</Link>
                 <Link to='/gal3'>GAL3</Link>
-                <Link to='/gal4'>GAL4</Link>
+                <Link to='/gal1'>GAL4</Link>
             </div>
         </div>
       </nav>
