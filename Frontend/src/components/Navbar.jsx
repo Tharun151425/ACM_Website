@@ -13,6 +13,7 @@ const Navbar = () => {
                 <Link to='/gal3'>GAL3</Link>
                 <Link to='/gal1'>GAL4</Link>
                 <Link to='/team1'>TEAM1</Link>
+                <Link to='/team2'>TEAM2</Link>
             </div>
         </div>
       </nav>

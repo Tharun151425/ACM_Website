@@ -1,49 +1,50 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-
+import sc from '/sc.jpg'
+import image from './img.json'
 // Team data - same structure as Design 1
 const teamData = {
   "2023": {
     core: [
-      { id: 1, name: "Alex Johnson", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "alex@example.com" },
-      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jamie@example.com" },
-      { id: 3, name: "Morgan Lee", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "morgan@example.com" },
-      { id: 4, name: "Taylor Brown", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "taylor@example.com" },
+      { id: 1, name: "Alex Johnson", role: "Chairperson", image: sc, linkedin: "#", github: "#", email: "alex@example.com" },
+      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#", email: "jamie@example.com" },
+      { id: 3, name: "Morgan Lee", role: "Secretary", image: image.timg3, linkedin: "#", github: "#", email: "morgan@example.com" },
+      { id: 4, name: "Taylor Brown", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#", email: "taylor@example.com" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "casey@example.com" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jordan@example.com" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "riley@example.com" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "quinn@example.com" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#", email: "casey@example.com" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#", email: "jordan@example.com" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#", email: "riley@example.com" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#", email: "quinn@example.com" },
     ]
   },
   "2024": {
     core: [
-      { id: 1, name: "Alex Johnson", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "alex@example.com" },
-      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jamie@example.com" },
-      { id: 3, name: "Morgan Lee", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "morgan@example.com" },
-      { id: 4, name: "Taylor Brown", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "taylor@example.com" },
+      { id: 1, name: "Alex Johnson", role: "Chairperson", image: sc, linkedin: "#", github: "#", email: "alex@example.com" },
+      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#", email: "jamie@example.com" },
+      { id: 3, name: "Morgan Lee", role: "Secretary", image: image.timg3, linkedin: "#", github: "#", email: "morgan@example.com" },
+      { id: 4, name: "Taylor Brown", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#", email: "taylor@example.com" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "casey@example.com" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jordan@example.com" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "riley@example.com" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "quinn@example.com" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#", email: "casey@example.com" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#", email: "jordan@example.com" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#", email: "riley@example.com" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#", email: "quinn@example.com" },
     ]
   },
   "2025": {
     core: [
-      { id: 1, name: "Alex Johnson", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "alex@example.com" },
-      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jamie@example.com" },
-      { id: 3, name: "Morgan Lee", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "morgan@example.com" },
-      { id: 4, name: "Taylor Brown", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "taylor@example.com" },
+      { id: 1, name: "Alex Johnson", role: "Chairperson", image: sc, linkedin: "#", github: "#", email: "alex@example.com" },
+      { id: 2, name: "Jamie Smith", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#", email: "jamie@example.com" },
+      { id: 3, name: "Morgan Lee", role: "Secretary", image: image.timg3, linkedin: "#", github: "#", email: "morgan@example.com" },
+      { id: 4, name: "Taylor Brown", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#", email: "taylor@example.com" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "casey@example.com" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "jordan@example.com" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "riley@example.com" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#", email: "quinn@example.com" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#", email: "casey@example.com" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#", email: "jordan@example.com" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#", email: "riley@example.com" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#", email: "quinn@example.com" },
     ]
   }
 };
@@ -71,7 +72,16 @@ const TeamPageDesign2 = () => {
   const [selectedYear, setSelectedYear] = useState("2024");
   const [activeCategory, setActiveCategory] = useState("core");
   const [selectedMember, setSelectedMember] = useState(null);
-  const { colors, theme } = useTheme();
+  const { colors, theme,ToggleT } = {
+    "theme": "dark",
+    "colors": {
+        "background": "#0A1128",
+        "text": "#FEFCFB",
+        "accent": "#0466C8",
+        "secondary": "#1282A2",
+        "card": "#001F54"
+    }
+}
 
 
   const memberRef = useRef(null);
@@ -120,27 +130,37 @@ const TeamPageDesign2 = () => {
       className="min-h-screen pt-16 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" 
       style={{ backgroundColor: colors.background, color: colors.text }}
     >
+       
+        
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10" 
         style={{ backgroundColor: colors.electricAzure, filter: 'blur(80px)', transform: 'translate(20%, -30%)' }} />
       <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-10" 
         style={{ backgroundColor: colors.tealSky, filter: 'blur(100px)', transform: 'translate(-30%, 30%)' }} />
-
+        
       <div className="max-w-7xl mx-auto relative z-10">
+
         {/* Header */}
+        
         <motion.div 
           className="text-center mb-16"
           initial="hidden"
           animate="visible"
           variants={headerVariants}
         >
+            
           <h1 className="text-5xl font-bold mb-6">Our Team</h1>
           <p className="text-xl max-w-2xl mx-auto" style={{ color: theme === 'dark' ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.7)' }}>
             Meet the talented individuals driving ACM RVCE forward
           </p>
+          <h1 className="text-2xl text-amber-300">
+          Click The Profile to View More!
+          </h1>
+          
         </motion.div>
 
         {/* Year Navigation */}
+        
         <div className="flex justify-center mb-12">
           <div className="flex space-x-1 p-1 rounded-xl" 
             style={{ backgroundColor: theme === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }}>
@@ -238,7 +258,7 @@ const TeamPageDesign2 = () => {
                   {/* Profile image with mask */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md transform group-hover:scale-110 transition-transform duration-300">
-                      <img src="/api/placeholder/400/320" alt={member.name} className="w-full h-full object-cover" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -317,7 +337,7 @@ const TeamPageDesign2 = () => {
             <div className="p-8">
               <div className="flex flex-col sm:flex-row items-center mb-6">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 mb-4 sm:mb-0 sm:mr-6" style={{ borderColor: colors.electricAzure }}>
-                  <img src="/api/placeholder/400/320" alt={selectedMember.name} className="w-full h-full object-cover" />
+                  <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold mb-1">{selectedMember.name}</h2>
@@ -367,6 +387,7 @@ const TeamPageDesign2 = () => {
           </motion.div>
         </div>
       )}
+      
     </div>
   );
 };
