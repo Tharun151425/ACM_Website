@@ -7,6 +7,7 @@ import Gal1 from './components/gal1'
 import Gal2 from './components/gal2'
 import Gal3 from './components/gal3'
 import Gal4 from './components/gal4'
+import Team1 from './components/team1'
 
 
 const Home = () => {
@@ -140,6 +141,7 @@ function App() {
         <Route path="/gal2" element={<Gal2 />} />
         <Route path="/gal3" element={<Gal3 />} />
         <Route path="/gal4" element={<Gal4 />} />
+        <Route path="/team1" element={<Team1 />} />
       </Routes>
     </BrowserRouter>
     </ThemeProvider>
