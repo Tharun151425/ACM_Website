@@ -1,48 +1,50 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import image from './img.json'
+import sc from "/sc.jpg"
 
 const teamData = {
   "2023": {
     core: [
-      { id: 1, name: "Tim Cheese", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 3, name: "Pengu", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 4, name: "Simon Claw", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 1, name: "Tim Cheese", role: "Chairperson", image: sc, linkedin: "#", github: "#" },
+      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 3, name: "Pengu", role: "Secretary", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 4, name: "Simon Claw", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#" },
     ]
   },
   "2024": {
     core: [
-      { id: 1, name: "Tim Cheese", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 3, name: "Pengu", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 4, name: "Simon Claw", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 1, name: "Tim Cheese", role: "Chairperson", image: sc, linkedin: "#", github: "#" },
+      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 3, name: "Pengu", role: "Secretary", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 4, name: "Simon Claw", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#" },
     ]
   },
   "2025": {
     core: [
-      { id: 1, name: "Tim Cheese", role: "Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 3, name: "Pengu", role: "Secretary", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 4, name: "Simon Claw", role: "Treasurer", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 1, name: "Tim Cheese", role: "Chairperson", image: sc, linkedin: "#", github: "#" },
+      { id: 2, name: "Tung Tung Sahur", role: "Vice Chairperson", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 3, name: "Pengu", role: "Secretary", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 4, name: "Simon Claw", role: "Treasurer", image: image.timg4, linkedin: "#", github: "#" },
     ],
     junior: [
-      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
-      { id: 8, name: "Quinn Miller", role: "Design Lead", image: "/placeholder-profile.jpg", linkedin: "#", github: "#" },
+      { id: 5, name: "Casey Wilson", role: "Event Coordinator", image: sc, linkedin: "#", github: "#" },
+      { id: 6, name: "Jordan Davis", role: "Technical Lead", image: image.timg2, linkedin: "#", github: "#" },
+      { id: 7, name: "Riley Moore", role: "Marketing Lead", image: image.timg3, linkedin: "#", github: "#" },
+      { id: 8, name: "Quinn Miller", role: "Design Lead", image: image.timg4, linkedin: "#", github: "#" },
     ]
   }
 };
@@ -63,8 +65,11 @@ const GitHubIcon = () => (
 const TeamPageDesign1 = () => {
   const [selectedYear, setSelectedYear] = useState("2024");
   const [activeTab, setActiveTab] = useState("core");
-  const { colors, theme } = useTheme();
+  const { theme,colors, toggleTheme } = useTheme();
 
+const handleTheme = () =>{
+
+}
   const years = Object.keys(teamData).sort();
 
   const cardVariants = {
@@ -83,6 +88,18 @@ const TeamPageDesign1 = () => {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: colors.background, color: colors.text }}>
       <div className="max-w-7xl mx-auto">
+        <div>
+        <button
+      onClick={toggleTheme}
+      className={`px-4 py-2 rounded-md font-semibold transition-colors duration-300 
+        ${theme === 'dark' 
+          ? 'bg-white text-black hover:bg-gray-200' 
+          : 'bg-black text-white hover:bg-gray-800'}`}
+      style={{ border: `2px solid ${colors.accent}` }}
+    >
+      {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    </button>
+        </div>
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Our Team</h1>
@@ -164,7 +181,7 @@ const TeamPageDesign1 = () => {
               {/* Profile Image */}
               <div className="h-56 relative overflow-hidden">
                 <img 
-                  src="/api/placeholder/400/320" 
+                  src={member.image}
                   alt={member.name} 
                   className="w-full h-full object-cover"
                 />
