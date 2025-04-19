@@ -9,7 +9,7 @@ import Gal3 from './components/gal3'
 import Gal4 from './components/gal4'
 import Team1 from './components/team1'
 import Team2 from './components/team2'
-
+import { Analytics } from "@vercel/analytics/react"
 
 const Home = () => {
   return (
@@ -51,7 +51,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Events Section */}
       {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -145,6 +144,7 @@ function App() {
         <Route path="/team1" element={<Team1 />} />
         <Route path="/team2" element={<Team2 />} />
       </Routes>
+      <Analytics/>
     </BrowserRouter>
     </ThemeProvider>
   </>
