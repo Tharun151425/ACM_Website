@@ -8,6 +8,7 @@ const Navbar = () => {
                 <Link to='/'>HOME</Link>
             </div>
             <div className="flex space-x-4">
+                <Link to='/gal5'>GAL5</Link>
                 <Link to='/gal4'>GAL1</Link>
                 <Link to='/gal2'>GAL2</Link>
                 <Link to='/gal3'>GAL3</Link>

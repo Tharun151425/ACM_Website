@@ -7,6 +7,7 @@ import Gal1 from './components/gal1'
 import Gal2 from './components/gal2'
 import Gal3 from './components/gal3'
 import Gal4 from './components/gal4'
+import Gal5 from './components/gal5'
 import Team1 from './components/team1'
 import Team2 from './components/team2'
 import { Analytics } from "@vercel/analytics/react"
@@ -141,6 +142,7 @@ function App() {
         <Route path="/gal2" element={<Gal2 />} />
         <Route path="/gal3" element={<Gal3 />} />
         <Route path="/gal4" element={<Gal4 />} />
+        <Route path="/gal5" element={<Gal5 />} />
         <Route path="/team1" element={<Team1 />} />
         <Route path="/team2" element={<Team2 />} />
       </Routes>
